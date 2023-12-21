@@ -11,8 +11,6 @@
       const openShareMenu = async () => {
         try {
           const shareData = {
-            title: "MDN",
-            text: "Learn web development on MDN!",
             url: "https://www.google.com/maps/dir/?api=1&origin=22.724277,72.444534&destination=23.029207,72.591476",
           };
           await navigator.share(shareData);
