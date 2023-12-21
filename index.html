@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="share">Share</button>
+    <script>
+      const openShareMenu = async () => {
+        try {
+          const shareData = {
+            title: "MDN",
+            text: "Learn web development on MDN!",
+            url: "https://www.google.com/maps/dir/?api=1&origin=22.724277,72.444534&destination=23.029207,72.591476",
+          };
+          await navigator.share(shareData);
+          console.log("Data was shared successfully");
+        } catch (err) {
+          console.error("Share failed:", err.message);
+        }
+      };
+
+      const shareButton = document.getElementById("share");
+      shareButton.addEventListener("click", openShareMenu);
+    </script>
+  </body>
+</html>
